@@ -1,0 +1,15 @@
+// Main Sass file
+$body-bg: #abb4b6;
+
+// Jumbotron
+$jumbo-margin: 75px;
+$jumbo-radius: 25px;
+
+body {
+    background: $body-bg;
+}
+
+.jumbotron {
+     margin-top: $jumbo-margin;
+     border-radius: $jumbo-radius;
+}
