@@ -18,7 +18,7 @@ gulp.task('serve', ['sass'], () => {
     browserSync.init({
         server: './src'
     });
-    // watch any SASS file changes
+    // watch any Sass file changes
     gulp.watch(['src/scss/*.scss'], ['sass'])
     // watch any HTML file changes
     gulp.watch(['src/*.html']).on('change', browserSync.reload)
