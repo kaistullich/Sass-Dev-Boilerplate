@@ -4,10 +4,11 @@ const sass = require('gulp-sass');
 
 // Complie Sass
 gulp.task('sass', () => {
-    // watch src/scss for any changes to Sass files
+    // sass file location
     return gulp.src(['src/scss/*.scss'])
+    // compile sass to CSS
     .pipe(sass())
-    // complie to ./src/css
+    // place compiled CSS to ./src/css
     .pipe(gulp.dest('src/css'))
     // stream to the browser
     .pipe(browserSync.stream());
@@ -15,12 +16,13 @@ gulp.task('sass', () => {
 
 // Watch & Serve
 gulp.task('serve', ['sass'], () => {
+    // initialize browser-sync with location to serve
     browserSync.init({
         server: './src'
     });
     // watch any Sass file changes
     gulp.watch(['src/scss/*.scss'], ['sass'])
-    // watch any HTML file changes
+    // watch any HTML file changes, if change reload browser
     gulp.watch(['src/*.html']).on('change', browserSync.reload)
 });
 
