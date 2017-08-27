@@ -22,8 +22,8 @@ gulp.task('serve', ['sass'], () => {
     });
     // watch any Sass file changes
     gulp.watch(['src/scss/*.scss'], ['sass'])
-    // watch any HTML file changes, if change reload browser
-    gulp.watch(['src/*.html']).on('change', browserSync.reload)
+    // watch any HTML or JS file changes, if change reload browser
+    gulp.watch(['src/*.html', 'src/js/*.js']).on('change', browserSync.reload)
 });
 
 // Default task (runs gulp.task('serve'))
