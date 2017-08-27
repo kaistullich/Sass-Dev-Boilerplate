@@ -4,13 +4,13 @@ const sass = require('gulp-sass');
 
 // Complie Sass
 gulp.task('sass', () => {
-    // sass file location
+    // Sass files location
     return gulp.src(['src/scss/*.scss'])
-    // compile sass to CSS
+    // compile Sass
     .pipe(sass())
     // place compiled CSS to ./src/css
     .pipe(gulp.dest('src/css'))
-    // stream to the browser
+    // stream to browser
     .pipe(browserSync.stream());
 });
 
@@ -26,5 +26,5 @@ gulp.task('serve', ['sass'], () => {
     gulp.watch(['src/*.html', 'src/js/*.js']).on('change', browserSync.reload)
 });
 
-// Default task (runs gulp.task('serve'))
+// Default task
 gulp.task('default', ['serve']);
